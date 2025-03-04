@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  product-service:
+    image: mall/product-service:v1.0
+    ports:
+      - "9000:9000"
+    networks:
+      - mall-network
+
+  order-service:
+    image: mall/order-service:v1.0
+    ports:
+      - "10000:10000"
+    networks:
+      - mall-network
+
+  inventory-service:
+    image: mall/inventory_service:v1.0
+    ports:
+      - "11000:11000"
+    networks:
+      - mall-network
+
+  user-service:
+    image: mall/user-service:v1.0
+    ports:
+      - "12000:12000"
+    networks:
+      - mall-network
+
+  gateway-service:
+    image: mall/gateway-service:v1.0
+    ports:
+      - "88:88"
+    networks:
+      - mall-network
+
+networks:
+  mall-network:
+    driver: bridge

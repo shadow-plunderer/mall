@@ -1,0 +1,49 @@
+# Maven target directory
+target/
+
+# IntelliJ IDEA files
+*.iml
+.idea/
+*.ipr
+*.iws
+
+# Eclipse files
+.project
+.classpath
+.settings/
+
+# NetBeans files
+nbproject/
+*.nb-gradle/
+
+# VS Code files
+.vscode/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Build directories
+bin/
+out/
+
+# Dependency directories
+node_modules/
+lib/
+
+# Generated files
+*.class
+*.jar
+*.war
+*.ear
+
+# Other
+*.swp
+*~

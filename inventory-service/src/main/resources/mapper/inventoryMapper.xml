@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.dao.IInventoryMapper">
+    <update id="lockInventory">
+        UPDATE inventory
+        SET reserve_stock = reserve_stock + #{quantity}
+        WHERE product_id = #{productId}
+          AND stock - reserve_stock >= #{quantity}
+    </update>
+</mapper>

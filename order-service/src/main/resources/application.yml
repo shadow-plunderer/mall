@@ -1,0 +1,32 @@
+server:
+  port: 10000
+spring:
+  application:
+    name: order-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/mall_order?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 172.31.105.105
+    sentinel:
+      transport:
+        dashboard: 172.31.105.105:8080
+        enable: true
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+
+seata:
+  tx-service-group: order-service-fescar-service-group
+
+rocketmq:
+  name-server: 172.31.105.105:9876
+  
+feign:
+  sentinel:
+    enabled: true
